@@ -1,7 +1,7 @@
 int Motor1 = 2;                                                 
 int Motor2 = 3;
 int PWMControl = 6;
-int PWM_Input = A0;
+int PWM_Input = A0;                                           // analog pin
 int PWM_Value = 0;
 void setup() {
   pinMode(Motor1, OUTPUT);

@@ -95,13 +95,13 @@ void setup() {
   pinMode(DirPin1, OUTPUT); 
   pinMode(DirPin2, OUTPUT); 
   cli(); 
-  TCCR1A = 0; 
-  TCCR1B = 0; 
-  TCNT1 = 0; 
+  TCCR1A = 0;                                                                                               // Timer/Counter1 Control Register A
+  TCCR1B = 0;                                                                                               // Timer/Counter1 Control Register B
+  TCNT1 = 0;                                                            
   OCR1A = 12499;
-  TCCR1B |= (1 << WGM12); 
-  TCCR1B |= (1 << CS11 | 1 << CS10); 
-  TIMSK1 |= (1 << OCIE1A); 
+  TCCR1B |= (1 << WGM12);                                                                                   // clear timer on compare (CTC) mode                                                                                   
+  TCCR1B |= (1 << CS11 | 1 << CS10);                                                                        // CS12 0 CS11 1 CS10 1: divide clock by 64
+  TIMSK1 |= (1 << OCIE1A);                                                                                  // timer/counter interrupt mask register
   sei(); 
 } 
 
